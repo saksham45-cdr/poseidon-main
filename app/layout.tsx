@@ -21,8 +21,8 @@ const yatraOne = Yatra_One({
 });
 
 export const metadata: Metadata = {
-  title: "Anveshan",
-  description: "Marine Debris Detection System",
+  title: "Poseidon",
+  description: "AI-powered marine sonar debris detection and geospatial reporting platform",
 };
 
 export default function RootLayout({
@@ -32,11 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} ${yatraOne.variable} font-sans bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500/30 transition-colors duration-300 relative`}>
+      <body className={`${plusJakartaSans.variable} ${yatraOne.variable} font-sans bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-50 min-h-screen flex flex-col selection:bg-amber-500/30 transition-colors duration-300 relative`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <div className="fixed inset-0 -z-10 pointer-events-none">
             <Aurora
-              colorStops={["#0092B8", "#3B82F6", "#273bff"]}
+              colorStops={["#F59E0B", "#F97316", "#D97706"]}
               blend={0.5}
               amplitude={1.0}
               speed={0.5}

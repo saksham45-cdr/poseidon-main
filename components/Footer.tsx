@@ -2,20 +2,20 @@
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 py-6 border-t border-slate-200 dark:border-slate-900 bg-transparent transition-colors">
+    <footer className="relative z-10 py-6 border-t border-stone-200 dark:border-stone-800 bg-transparent transition-colors">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
-        
+
         {/* Left: Copyright */}
-        <p className="text-sm text-slate-500 font-sans text-center md:text-left">
-          &copy; 2026 Anveshan. Made by Team Unstable.
+        <p className="text-sm text-stone-500 font-sans text-center md:text-left">
+          &copy; 2026 Poseidon. Made by Team Unstable.
         </p>
 
-        {/* Right: Social/Links */}
-        <a 
-          href="https://github.com/agrimgarg08/anveshan" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="p-2 rounded-full text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300"
+        {/* Right: GitHub */}
+        <a
+          href="https://github.com/agrimgarg08/anveshan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 transition-colors duration-300"
           aria-label="GitHub Repository"
         >
           <svg

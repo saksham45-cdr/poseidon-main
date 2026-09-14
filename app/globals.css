@@ -15,13 +15,45 @@
   font-weight: 400;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* ── Semantic brand tokens ── */
+:root {
+  --brand:       #f59e0b; /* amber-500 */
+  --brand-light: #fbbf24; /* amber-400 */
+  --brand-dark:  #d97706; /* amber-600 */
+  --brand-glow:  rgba(245, 158, 11, 0.35);
+  --accent:      #f97316; /* orange-500 */
+}
+
+.dark {
+  --brand:       #fbbf24; /* amber-400 */
+  --brand-light: #fcd34d; /* amber-300 */
+  --brand-dark:  #f59e0b; /* amber-500 */
+  --brand-glow:  rgba(251, 191, 36, 0.25);
+  --accent:      #fb923c; /* orange-400 */
+}
+
+/* ── Global theme-switch transition ── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+/* Opt out for elements with their own animation controllers */
+canvas,
+[data-framer-motion],
+.no-theme-transition {
+  transition: none !important;
+}
+
+/* ── Hide scrollbar ── */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

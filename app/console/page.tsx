@@ -62,8 +62,6 @@ export default function Dashboard() {
     }
   };
 
-
-
   const handleUpload = async () => {
     if (!file) return;
 
@@ -152,7 +150,7 @@ export default function Dashboard() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'anveshan_report.json';
+    a.download = 'poseidon_report.json';
     a.click();
   };
 
@@ -175,7 +173,7 @@ export default function Dashboard() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'anveshan_report.csv';
+    a.download = 'poseidon_report.csv';
     a.click();
   };
 
@@ -196,15 +194,15 @@ export default function Dashboard() {
 
   if (!authReady || !authenticated) {
     return (
-      <main className="flex min-h-[70vh] items-center justify-center bg-transparent text-slate-500 dark:text-slate-400 transition-colors">
-        <Loader2 className="w-8 h-8 animate-spin text-cyan-500" />
+      <main className="flex min-h-[70vh] items-center justify-center bg-transparent text-stone-500 dark:text-stone-400 transition-colors">
+        <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
       </main>
     );
   }
 
   return (
     <div
-      className="flex-1 bg-transparent text-slate-900 dark:text-slate-200 font-sans selection:bg-cyan-500/30 flex flex-col transition-colors"
+      className="flex-1 bg-transparent text-stone-900 dark:text-stone-200 font-sans selection:bg-amber-500/30 flex flex-col transition-colors"
       onDragOver={(e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -247,9 +245,9 @@ export default function Dashboard() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="xl:col-span-4 space-y-6"
           >
-            <div className="bg-white/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-sm min-h-[400px] flex flex-col shadow-sm dark:shadow-none transition-colors">
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2">
-                <UploadCloud size={20} className="text-cyan-600 dark:text-cyan-400" /> Upload Sonar Data
+            <div className="bg-white/80 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 backdrop-blur-sm min-h-[400px] flex flex-col shadow-sm dark:shadow-none transition-colors">
+              <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-6 flex items-center gap-2">
+                <UploadCloud size={20} className="text-amber-600 dark:text-amber-400" /> Upload Sonar Data
               </h2>
 
               {/* Drag and drop area */}
@@ -262,9 +260,9 @@ export default function Dashboard() {
                     document.getElementById('file-upload')?.click();
                   }
                 }}
-                className={`relative flex-1 flex flex-col items-center justify-center border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:focus-visible:ring-offset-slate-900
-                  ${isDragging ? 'border-cyan-500 bg-cyan-50 dark:border-cyan-400 dark:bg-cyan-400/5' : 'border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800/50'}
-                  ${file ? 'border-solid border-slate-300 bg-slate-50 dark:border-slate-700 dark:bg-slate-900' : ''}`}
+                className={`relative flex-1 flex flex-col items-center justify-center border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50 dark:focus-visible:ring-offset-stone-900
+                  ${isDragging ? 'border-amber-500 bg-amber-50 dark:border-amber-400 dark:bg-amber-400/5' : 'border-stone-300 dark:border-stone-700 hover:border-stone-400 dark:hover:border-stone-500 hover:bg-stone-50 dark:hover:bg-stone-800/50'}
+                  ${file ? 'border-solid border-stone-300 bg-stone-50 dark:border-stone-700 dark:bg-stone-900' : ''}`}
               >
                 <input
                   id="file-upload"
@@ -276,9 +274,9 @@ export default function Dashboard() {
 
                 {file ? (
                   <div className="flex flex-col items-center w-full max-w-[240px] overflow-hidden">
-                    <ImageIcon className="w-10 h-10 text-cyan-600 dark:text-cyan-500 mb-3 shrink-0" />
-                    <p className="text-sm font-medium text-slate-900 dark:text-slate-200 truncate w-full">{file.name}</p>
-                    <p className="text-xs text-slate-500 mt-1">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                    <ImageIcon className="w-10 h-10 text-amber-600 dark:text-amber-500 mb-3 shrink-0" />
+                    <p className="text-sm font-medium text-stone-900 dark:text-stone-200 truncate w-full">{file.name}</p>
+                    <p className="text-xs text-stone-500 mt-1">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
                     <button
                       onClick={(e) => { e.stopPropagation(); setFile(null); setPreviewUrl(null); setResult(null); }}
                       className="mt-4 px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 dark:bg-red-500/10 dark:hover:bg-red-500/20 dark:text-red-400 text-xs font-medium transition-colors duration-300"
@@ -288,11 +286,11 @@ export default function Dashboard() {
                   </div>
                 ) : (
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 transition-colors">
-                      <UploadCloud className="w-6 h-6 text-slate-500 dark:text-slate-400" />
+                    <div className="w-12 h-12 bg-stone-100 dark:bg-stone-800 rounded-full flex items-center justify-center mb-4 transition-colors">
+                      <UploadCloud className="w-6 h-6 text-stone-500 dark:text-stone-400" />
                     </div>
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Click to upload or drag and drop</p>
-                    <p className="text-xs text-slate-500 mt-2">PNG or JPG (max. 10MB)</p>
+                    <p className="text-sm font-medium text-stone-700 dark:text-stone-300">Click to upload or drag and drop</p>
+                    <p className="text-xs text-stone-500 mt-2">PNG or JPG (max. 10MB)</p>
                   </div>
                 )}
               </div>
@@ -301,7 +299,7 @@ export default function Dashboard() {
                 <button
                   onClick={handleUpload}
                   disabled={loading}
-                  className="mt-6 w-full bg-cyan-600 hover:bg-cyan-500 dark:bg-cyan-500 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-semibold py-3 px-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="mt-6 w-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold py-3 px-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2 shadow-sm shadow-amber-500/20 hover:shadow-amber-500/30 no-theme-transition"
                 >
                   {loading ? (
                     <><Loader2 size={18} className="animate-spin" /> Analyzing Sonar Image...</>
@@ -318,23 +316,23 @@ export default function Dashboard() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-sm shadow-sm dark:shadow-none transition-colors"
+                className="bg-white/80 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 backdrop-blur-sm shadow-sm dark:shadow-none transition-colors"
               >
-                <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-                  <Download size={20} className="text-indigo-600 dark:text-indigo-400" /> Export Reports
+                <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-4 flex items-center gap-2">
+                  <Download size={20} className="text-amber-600 dark:text-amber-400" /> Export Reports
                 </h2>
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={downloadJson}
-                    className="flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 transition"
+                    className="flex items-center justify-center gap-2 bg-stone-50 hover:bg-amber-50 dark:bg-stone-800 dark:hover:bg-amber-500/10 text-stone-700 dark:text-stone-200 py-2.5 px-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-amber-300 dark:hover:border-amber-500/40 transition-all duration-200"
                   >
-                    <FileJson size={18} className="text-slate-500 dark:text-slate-400" /> JSON
+                    <FileJson size={18} className="text-stone-500 dark:text-stone-400" /> JSON
                   </button>
                   <button
                     onClick={downloadCsv}
-                    className="flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 transition"
+                    className="flex items-center justify-center gap-2 bg-stone-50 hover:bg-amber-50 dark:bg-stone-800 dark:hover:bg-amber-500/10 text-stone-700 dark:text-stone-200 py-2.5 px-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-amber-300 dark:hover:border-amber-500/40 transition-all duration-200"
                   >
-                    <FileSpreadsheet size={18} className="text-slate-500 dark:text-slate-400" /> CSV
+                    <FileSpreadsheet size={18} className="text-stone-500 dark:text-stone-400" /> CSV
                   </button>
                 </div>
               </motion.div>
@@ -350,10 +348,10 @@ export default function Dashboard() {
           >
 
             {/* Image Preview & Results */}
-            <div className="bg-white/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-sm min-h-[400px] flex flex-col shadow-sm dark:shadow-none transition-colors">
+            <div className="bg-white/80 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 backdrop-blur-sm min-h-[400px] flex flex-col shadow-sm dark:shadow-none transition-colors">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                  <ImageIcon size={20} className="text-blue-600 dark:text-blue-400" /> Sonar Analysis View
+                <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                  <ImageIcon size={20} className="text-amber-600 dark:text-amber-400" /> Sonar Analysis View
                 </h2>
                 {result && (
                   <span className="bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1.5">
@@ -363,7 +361,7 @@ export default function Dashboard() {
               </div>
 
               {!previewUrl && !loading && !result && (
-                <div className="flex-1 flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl bg-slate-50 dark:bg-slate-900/30 text-slate-500 transition-colors">
+                <div className="flex-1 flex items-center justify-center border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-xl bg-stone-50 dark:bg-stone-900/30 text-stone-500 transition-colors">
                   <p>Upload a sonar image to begin analysis</p>
                 </div>
               )}
@@ -373,12 +371,12 @@ export default function Dashboard() {
                   <div className="w-full space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <div className="h-4 w-24 bg-slate-200 dark:bg-slate-800/50 rounded animate-pulse"></div>
-                        <div className="w-full aspect-square bg-slate-100 dark:bg-slate-800/20 rounded-xl animate-pulse border border-slate-200 dark:border-slate-800/50"></div>
+                        <div className="h-4 w-24 bg-stone-200 dark:bg-stone-800/50 rounded animate-pulse"></div>
+                        <div className="w-full aspect-square bg-stone-100 dark:bg-stone-800/20 rounded-xl animate-pulse border border-stone-200 dark:border-stone-800/50"></div>
                       </div>
                       <div className="space-y-3">
-                        <div className="h-4 w-48 bg-slate-200 dark:bg-slate-800/50 rounded animate-pulse"></div>
-                        <div className="w-full aspect-square bg-slate-100 dark:bg-slate-800/20 rounded-xl animate-pulse border border-slate-200 dark:border-slate-800/50"></div>
+                        <div className="h-4 w-48 bg-stone-200 dark:bg-stone-800/50 rounded animate-pulse"></div>
+                        <div className="w-full aspect-square bg-stone-100 dark:bg-stone-800/20 rounded-xl animate-pulse border border-stone-200 dark:border-stone-800/50"></div>
                       </div>
                     </div>
                   </div>
@@ -386,7 +384,7 @@ export default function Dashboard() {
               )}
 
               {previewUrl && !result && !loading && (
-                <div className="flex-1 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-100 dark:bg-black flex items-center justify-center transition-colors">
+                <div className="flex-1 border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden bg-stone-100 dark:bg-black flex items-center justify-center transition-colors">
                   <img src={previewUrl} alt="Upload Preview" className="max-w-full max-h-[600px] object-contain" />
                 </div>
               )}
@@ -395,17 +393,17 @@ export default function Dashboard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Raw Input</h3>
+                      <h3 className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Raw Input</h3>
                     </div>
-                    <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-100 dark:bg-black aspect-square flex items-center justify-center transition-colors">
+                    <div className="border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden bg-stone-100 dark:bg-black aspect-square flex items-center justify-center transition-colors">
                       <img src={previewUrl!} alt="Original Input" className="max-w-full max-h-full object-contain" />
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Detections (Preprocessed)</h3>
+                      <h3 className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Detections (Preprocessed)</h3>
                     </div>
-                    <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-slate-100 dark:bg-black aspect-square flex items-center justify-center relative transition-colors">
+                    <div className="border border-stone-200 dark:border-stone-800 rounded-xl overflow-hidden bg-stone-100 dark:bg-black aspect-square flex items-center justify-center relative transition-colors">
                       <canvas ref={canvasRef} className="max-w-full max-h-full object-contain" />
                     </div>
                   </div>
@@ -421,9 +419,9 @@ export default function Dashboard() {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
               >
                 {/* Map View */}
-                <div className="bg-white/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col shadow-sm dark:shadow-none transition-colors">
+                <div className="bg-white/80 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col shadow-sm dark:shadow-none transition-colors">
                   <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                    <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 flex items-center gap-2">
                       <MapIcon size={20} className="text-emerald-600 dark:text-emerald-400" /> Geolocation
                     </h2>
                   </div>
@@ -439,7 +437,7 @@ export default function Dashboard() {
                     </div>
                   )}
 
-                  <div className="flex-1 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 min-h-[300px] z-0 relative transition-colors">
+                  <div className="flex-1 rounded-xl overflow-hidden border border-stone-200 dark:border-stone-700 min-h-[300px] z-0 relative transition-colors">
                     {result.report && result.report.length > 0 ? (
                       <MapContainer
                         center={[result.report[0].latitude, result.report[0].longitude]}
@@ -464,16 +462,16 @@ export default function Dashboard() {
                           }) : undefined;
                           return (
                             <Marker key={entry.detection_id} position={[entry.latitude, entry.longitude]} icon={customIcon}>
-                              <Popup className="text-slate-900 font-sans">
+                              <Popup className="text-stone-900 font-sans">
                                 <div className="font-semibold capitalize">{entry.image_class.replace(/_/g, ' ')}</div>
-                                <div className="text-sm text-slate-600">Confidence: {entry.confidence.toFixed(1)}%</div>
+                                <div className="text-sm text-stone-600">Confidence: {entry.confidence.toFixed(1)}%</div>
                               </Popup>
                             </Marker>
                           );
                         })}
                       </MapContainer>
                     ) : (
-                      <div className="absolute inset-0 flex items-center justify-center bg-slate-50 dark:bg-slate-800 text-slate-500 text-sm transition-colors">
+                      <div className="absolute inset-0 flex items-center justify-center bg-stone-50 dark:bg-stone-800 text-stone-500 text-sm transition-colors">
                         No geographic data available for mapping.
                       </div>
                     )}
@@ -481,9 +479,9 @@ export default function Dashboard() {
                 </div>
 
                 {/* Detection Ledger */}
-                <div className="bg-white/80 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col shadow-sm dark:shadow-none transition-colors">
-                  <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-                    <BarChart size={20} className="text-purple-600 dark:text-purple-400" /> Detection Ledger
+                <div className="bg-white/80 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 backdrop-blur-sm flex flex-col shadow-sm dark:shadow-none transition-colors">
+                  <h2 className="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-4 flex items-center gap-2">
+                    <BarChart size={20} className="text-amber-600 dark:text-amber-400" /> Detection Ledger
                   </h2>
                   <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                     {result.report && result.report.length > 0 ? (
@@ -497,9 +495,9 @@ export default function Dashboard() {
                               }`}
                           >
                             <div>
-                              <p className="font-semibold text-slate-900 dark:text-slate-200 capitalize">{entry.image_class.replace(/_/g, ' ')}</p>
+                              <p className="font-semibold text-stone-900 dark:text-stone-200 capitalize">{entry.image_class.replace(/_/g, ' ')}</p>
                               <div className="flex items-center gap-2 mt-1">
-                                <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{entry.detection_id}</span>
+                                <span className="text-xs font-mono text-stone-500 dark:text-stone-400">{entry.detection_id}</span>
                                 {entry.flagged_for_review && (
                                   <span className="bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded transition-colors">
                                     Needs Review
@@ -508,17 +506,17 @@ export default function Dashboard() {
                               </div>
                             </div>
                             <div className="text-right">
-                              <p className="text-xl font-mono text-slate-800 dark:text-slate-100">{entry.confidence.toFixed(1)}<span className="text-sm text-slate-500">%</span></p>
+                              <p className="text-xl font-mono text-stone-800 dark:text-stone-100">{entry.confidence.toFixed(1)}<span className="text-sm text-stone-500">%</span></p>
                             </div>
                           </div>
                         ))}
                       </div>
                     ) : (
-                      <div className="h-full flex flex-col items-center justify-center text-slate-500 text-sm border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-8 text-center bg-slate-50 dark:bg-slate-900/30 transition-colors">
-                        <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 transition-colors">
+                      <div className="h-full flex flex-col items-center justify-center text-stone-500 text-sm border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-xl p-8 text-center bg-stone-50 dark:bg-stone-900/30 transition-colors">
+                        <div className="w-16 h-16 bg-stone-100 dark:bg-stone-800 rounded-full flex items-center justify-center mb-4 transition-colors">
                           <CheckCircle size={32} className="text-emerald-500/50" />
                         </div>
-                        <p className="font-medium text-slate-700 dark:text-slate-300">All Clear</p>
+                        <p className="font-medium text-stone-700 dark:text-stone-300">All Clear</p>
                         <p className="mt-1">No targets detected matching the anomaly threshold.</p>
                       </div>
                     )}
@@ -533,4 +531,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
