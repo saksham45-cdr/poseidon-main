@@ -1,14 +1,10 @@
-# Anveshan (अन्वेषण)
-
-This repository follows the SIH 2026 template for project submission.
+# Poseidon
 
 ## 1. Project Information
 
-- **Project Title:** Anveshan (अन्वेषण) – AI-Powered Automated Underwater Marine Debris and Anomaly Detection System
-- **PS ID:** SIH26057
-- **PS Title:** AI-Powered Automated Underwater Marine Debris and Anomaly Detection System using Side-Scan Sonar Imagery
+- **Project Title:** Poseidon – AI-Powered Automated Underwater Marine Debris and Anomaly Detection System
 - **Category:** Software
-- **Theme:** Disaster Management
+- **Theme:** Environment Data Analysis
 
 ## 2. Problem Statement
 
@@ -16,7 +12,7 @@ Detecting marine debris (ghost nets, pipes, shipwrecks, anomalies) manually from
 
 ## 3. Proposed Solution
 
-Anveshan allows users to upload a sonar image which is then preprocessed (despeckle, contrast, nadir-gap mask). The backend processes the image using an AI model to detect debris with bounding boxes and confidence scores. It applies confidence filtering and geotags the detections, ultimately displaying them on an interactive map and allowing the export of a structured JSON/CSV report.
+Poseidon allows users to upload a sonar image which is then preprocessed (despeckle, contrast, nadir-gap mask). The backend processes the image using an AI model to detect debris with bounding boxes and confidence scores. It applies confidence filtering and geotags the detections, ultimately displaying them on an interactive map and allowing the export of a structured JSON/CSV report.
 
 ## 4. Key Features
 
@@ -69,7 +65,7 @@ Frontend (Dashboard Map & Export)
 ## 7. Repository Structure
 
 ```text
-YOUR-SIH-PROJECT/
+poseidon/
 ├── README.md
 ├── SUBMISSION_GUIDE.md
 ├── submission/
@@ -90,7 +86,7 @@ YOUR-SIH-PROJECT/
 
 ## 8. Final Presentation
 
-Keep your final SIH presentation in the repository whenever the file size allows it.
+Keep the final presentation in the repository whenever the file size allows it.
 
 See [submission/PRESENTATION.md](submission/PRESENTATION.md) for the required format.
 
@@ -143,6 +139,3 @@ npm run dev
 ## 13. Future Scope
 
 Currently, this prototype trains and runs object detection through Roboflow's hosted service because a local GPU is not currently available. The dashboard performs preprocessing, confidence filtering, geotagging, and report generation locally. Local/edge model export is future work and is not claimed for this version.
-
----
-**Team:** Built by Team Unstable
